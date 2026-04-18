@@ -30,29 +30,4 @@ A dynamic full-stack catalogue website that organizes collections of **Character
 
 ---
 
-## 📁 Project Structure
-Cat-A-Log/
 
-├── index.html              
-├── admin.html              
-├── catalogue_db.sql       
-├── config/
-│   ├── db.php             
-│   └── db.example.php     
-├── api/
-│   ├── get_items.php       
-│   ├── get_detail.php     
-│   ├── add_item.php        
-│   ├── update_item.php     
-│   └── delete_item.php     
-├── css/
-│   ├── style.css          
-│   └── admin.css          
-├── js/
-│   ├── main.js             
-│   └── admin.js         
-└── assets/
-└── images/             
-├── characters/
-├── places/
-└── monuments/
