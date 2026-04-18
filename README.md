@@ -32,6 +32,7 @@ A dynamic full-stack catalogue website that organizes collections of **Character
 
 ## 📁 Project Structure
 Cat-A-Log/
+
 ├── index.html              
 ├── admin.html              
 ├── catalogue_db.sql       
