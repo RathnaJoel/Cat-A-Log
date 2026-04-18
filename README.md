@@ -31,3 +31,27 @@ A dynamic full-stack catalogue website that organizes collections of **Character
 ---
 
 ## 📁 Project Structure
+Cat-A-Log/
+├── index.html              # Main SPA shell
+├── admin.html              # Admin panel
+├── catalogue_db.sql        # Database schema + sample data
+├── config/
+│   ├── db.php              # DB connection (git-ignored)
+│   └── db.example.php      # Template — copy to db.php
+├── api/
+│   ├── get_items.php       # Fetch catalogue items (AJAX)
+│   ├── get_detail.php      # Fetch single item detail (AJAX)
+│   ├── add_item.php        # Add new entry (Admin)
+│   ├── update_item.php     # Edit entry (Admin)
+│   └── delete_item.php     # Delete entry (Admin)
+├── css/
+│   ├── style.css           # Main stylesheet
+│   └── admin.css           # Admin panel styles
+├── js/
+│   ├── main.js             # Frontend logic, routing, AJAX
+│   └── admin.js            # Admin CRUD logic
+└── assets/
+└── images/             # Character, place, monument images
+├── characters/
+├── places/
+└── monuments/
