@@ -17,29 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `catalogue_db`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin_users`
---
-
-CREATE TABLE `admin_users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `email` varchar(180) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `admin_users`
---
-
-INSERT INTO `admin_users` (`id`, `email`, `password`, `created_at`) VALUES
-(1, 'admin@catalog.com', '$2y$12$gyoDH9XqXcQKluhhMsn4quW3Jh8wd/UyteUNxqFZiX4WUya8Vxtgq', '2026-04-18 09:03:39');
 
 -- --------------------------------------------------------
 
