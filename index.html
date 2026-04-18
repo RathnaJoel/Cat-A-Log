@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat-A-Log! — The Ultimate Catalogue</title>
+
+  <!-- Favicon emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>" />
+
+  <!-- Google Fonts (preconnect for performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!--
+    ============================================================
+    Cat-A-Log! — Single Page Application Shell
+    All views are rendered into #app by main.js (jQuery + AJAX)
+    ============================================================
+  -->
+  <div id="app">
+    <!-- Initial loading state -->
+    <div style="display:flex;align-items:center;justify-content:center;height:100vh;">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <!-- Main application script -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

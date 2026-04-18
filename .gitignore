@@ -1,0 +1,10 @@
+# Ignore sensitive config - each person sets their own
+config/db.php
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
