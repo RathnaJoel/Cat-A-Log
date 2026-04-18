@@ -7,20 +7,37 @@
 /* ── Utility: render header HTML ─────────────────────────── */
 function renderHeader(activeLink = '') {
   return `
-  <header class="site-header">
-    <div class="site-logo">📖 Cat<span>-A-</span>Log!</div>
-    <nav class="site-nav">
-      <a href="#home" class="${activeLink==='home'?'active':''}" onclick="showHome()">Home</a>
-      <a href="#characters" class="${activeLink==='characters'?'active':''}"
-         onclick="loadCatalogue('characters')">Characters</a>
-      <a href="#places" class="${activeLink==='places'?'active':''}"
-         onclick="loadCatalogue('places')">Places</a>
-      <a href="#monuments" class="${activeLink==='monuments'?'active':''}"
-         onclick="loadCatalogue('monuments')">Monuments</a>
-      <a href="manage.html" class="manage-content-btn">🗂 Manage Content</a>
-    </nav>
-  </header>`;
-}
+    <header class="site-header">
+  
+      <div class="site-logo">📖 Cat<span>-A-</span>Log!</div>
+  
+      <nav class="site-nav">
+        <a href="#home" class="${activeLink==='home'?'active':''}" onclick="showHome()">Home</a>
+        <a href="#characters" class="${activeLink==='characters'?'active':''}" onclick="loadCatalogue('characters')">Characters</a>
+        <a href="#places" class="${activeLink==='places'?'active':''}" onclick="loadCatalogue('places')">Places</a>
+        <a href="#monuments" class="${activeLink==='monuments'?'active':''}" onclick="loadCatalogue('monuments')">Monuments</a>
+      </nav>
+  
+      <div class="header-right">
+      <div class="theme-wrapper">
+      <button class="theme-toggle" onclick="toggleThemeMenu()">⚙ Theme</button>
+    
+      <div class="theme-menu" id="themeMenu">
+        <button onclick="setTheme('dark')">Dark</button>
+        <button onclick="setTheme('light')">Light</button>
+        <button onclick="setTheme('darkblue')">Dark Blue</button>
+        <button onclick="setTheme('lightblue')">Light Blue</button>
+        <button onclick="setTheme('pink')">Pink</button>
+        <button onclick="setTheme('neon')">Neon</button>
+        <button onclick="setTheme('contrast')">A11Y</button>
+      </div>
+    </div>
+  
+        <a href="manage.html" class="manage-content-btn">🗂 Manage Content</a>
+      </div>
+  
+    </header>`;
+  }
 
 function renderFooter() {
   return `<footer class="site-footer">Cat-A-Log! &mdash; A College Practical Project &copy; ${new Date().getFullYear()}</footer>`;
@@ -31,8 +48,30 @@ let currentCategory = '';
 let currentPage     = 1;
 let searchTimeout   = null;
 
+function toggleThemeMenu() {
+  document.getElementById("themeMenu").classList.toggle("show");
+}
+
+function setTheme(theme) {
+  document.body.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+
+  document.querySelectorAll(".theme-menu button").forEach(btn => {
+    btn.classList.remove("active");
+    if (btn.getAttribute("data-theme") === theme) {
+      btn.classList.add("active");
+    }
+  });
+}
+
+function initTheme() {
+  const saved = localStorage.getItem("theme") || "dark";
+  setTheme(saved);
+}
+
 /* ── App entry point ─────────────────────────────────────── */
 $(document).ready(function () {
+  initTheme();
   showHome();
 });
 

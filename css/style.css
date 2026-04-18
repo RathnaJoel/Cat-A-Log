@@ -557,3 +557,112 @@ a:hover { color: var(--gold-light); }
   color: var(--gold-light);
   box-shadow: var(--glow-gold);
 }
+
+/* ============================================================
+   THEME SYSTEM (ADDED - DO NOT MODIFY EXISTING STYLES ABOVE)
+   ============================================================ */
+
+   body[data-theme="dark"] {
+    --bg-deep: #0b0d14;
+    --bg-card: #111520;
+    --text-primary: #e8e0cc;
+  }
+    
+  body[data-theme="light"] {
+    --bg-deep: #ffffff;
+    --bg-card: #f2f2f2;
+    --text-primary: #111111;
+  }
+  
+  body[data-theme="darkblue"] {
+    --bg-deep: #0a1f44;
+    --bg-card: #102a5c;
+    --text-primary: #ffffff;
+  }
+  
+  body[data-theme="lightblue"] {
+    --bg-deep: #dbeafe;
+    --bg-card: #93c5fd;
+    --text-primary: #0f172a;
+  }
+  
+  body[data-theme="pink"] {
+    --bg-deep: #ffe4ec;
+    --bg-card: #ffd1dc;
+    --text-primary: #1a1a1a;
+  }
+  
+  body[data-theme="neon"] {
+    --bg-deep: #0a001a;
+    --bg-card: #1a0033;
+    --text-primary: #d946ef;
+  }
+  
+  body[data-theme="contrast"] {
+    --bg-deep: #000000;
+    --bg-card: #111111;
+    --text-primary: #ffff00;
+  }
+  
+  /* Smooth transitions */
+  body {
+    transition: background 0.35s ease, color 0.35s ease;
+  }
+  
+  /* Theme wrapper UI (minimal clean integration) */
+  .theme-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .theme-toggle {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  /* dropdown hidden by default */
+  .theme-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    padding: 8px;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 9999;
+  }
+  
+  /* when opened */
+  .theme-menu.show {
+    display: flex;
+  }
+  
+  /* buttons inside menu */
+  .theme-menu button {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    color: white;
+  }
+  
+  .theme-menu button.active {
+    background: var(--gold);
+    color: black;
+  }
+  
+  /* header alignment fix */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
